@@ -16,25 +16,22 @@ const HomeContainer = styled.div`
 `;
 
 export default function Home() {
-    const navigate=useNavigate()
+  const navigate = useNavigate();
 
-    const clickInfo=()=>{
-        navigate("/about")
+  const clickInfo = () => {
+    navigate("/about");
+  };
 
-    }
+  const clickBloque = () => {
+    navigate("/explorer");
+  };
 
-    const clickBloque=()=>{
-        navigate("/explorer")
-
-    }
-
-    const clickLast=()=>{
-        navigate("/explorer")
-
-    }
+  const clickLast = () => {
+    navigate("/explorer");
+  };
   return (
     <Layout>
-      <Hero /> {/* Aquí agregamos el Hero Section */}
+      <Hero />
       <H2>Tu Portal Rápido a la Blockchain de Ethereum</H2>
       <HomeContainer>
         <Card>
@@ -44,7 +41,6 @@ export default function Home() {
             cómo consultar bloques y transacciones de Ethereum.
           </P>
 
-          {/* <P>Este es un bloque reciente de la blockchain.</P> */}
           <Button onClick={clickInfo}>Más información</Button>
         </Card>
         <Card>
@@ -54,7 +50,6 @@ export default function Home() {
             hash, transacciones, minero y más. ¡¡Te atreves!!
           </P>
 
-          {/* <P>Información de una transacción relevante.</P> */}
           <Button onClick={clickBloque}>Buscar Bloque</Button>
         </Card>
         <Card>
@@ -64,7 +59,6 @@ export default function Home() {
             información actualizada al instante.¡¡Vamos!!
           </P>
 
-          {/* <P>Datos de un smart contract interactivo.</P> */}
           <Button onClick={clickLast}>Ver ultimo bloque</Button>
         </Card>
       </HomeContainer>

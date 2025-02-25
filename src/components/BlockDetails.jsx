@@ -1,8 +1,11 @@
+
 import styled from "styled-components";
-import FlexBox from "./FlexBox/FlexBox";
 import { useEffect, useState } from "react";
 
-const StyledBlockDetails = styled(FlexBox)`
+const StyledBlockDetails = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   height: auto;
   max-width: 600px;
   max-height: 300px;
@@ -14,8 +17,6 @@ const StyledBlockDetails = styled(FlexBox)`
   overflow-y: auto;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    flex-direction: column;
-    align-items: flex-start;
     max-width: 90%;
     max-height: 250px;
     padding: 15px;
@@ -49,15 +50,17 @@ const BlockDetails = ({ data }) => {
   if (!data) return <StyledP>No hay datos disponibles.</StyledP>;
 
   return (
-    <StyledBlockDetails width={100} height={50} flexDirection="column">
+    <StyledBlockDetails>
       <StyledP>
         <StyledIntense>Número de bloque:</StyledIntense> {data.number || "Desconocido"}
       </StyledP>
       <StyledP>
-        <StyledIntense>Hash:</StyledIntense> <span title={data.hash}>{formatHash(data.hash)}</span>
+        <StyledIntense>Hash:</StyledIntense>{" "}
+        <span title={data.hash}>{formatHash(data.hash)}</span>
       </StyledP>
       <StyledP>
-        <StyledIntense>Hash anterior:</StyledIntense> <span title={data.parentHash}>{formatHash(data.parentHash)}</span>
+        <StyledIntense>Hash anterior:</StyledIntense>{" "}
+        <span title={data.parentHash}>{formatHash(data.parentHash)}</span>
       </StyledP>
       <StyledP>
         <StyledIntense>Fecha:</StyledIntense> {data.timestamp || "No disponible"}

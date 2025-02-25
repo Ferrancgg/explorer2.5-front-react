@@ -1,39 +1,34 @@
 import { render, screen } from "@testing-library/react";
-import { MemoryRouter, Routes, Route } from "react-router-dom";
-import App from "../src/App";
+import { MemoryRouter } from "react-router-dom";
+import App from "./App";
 
-import Explorer from "../src/pages/Explorer/Explorer"; // Importa tu página Explorer
-import About from "../src/pages/About/About"; // Importa tu página About
 
-test("renders Home Page by default", () => {
+test("Renderiza la página Home al inicio", () => {
   render(
     <MemoryRouter initialEntries={["/"]}>
       <App />
     </MemoryRouter>
   );
-  expect(screen.getByText(/Home/i)).toBeInTheDocument();
+
+  expect(screen.getByText(/Explora Ethereum en Tiempo Real/i)).toBeInTheDocument();
 });
 
-test("renders Explorer Page when navigating to /explorer", () => {
-  render(
-    <MemoryRouter initialEntries={["/explorer"]}>
-      <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="/explorer" element={<Explorer />} />
-      </Routes>
-    </MemoryRouter>
-  );
-  expect(screen.getByText(/Explorer/i)).toBeInTheDocument();
-});
-
-test("renders About Page when navigating to /about", () => {
+test("Carga la página About al navegar a /about", () => {
   render(
     <MemoryRouter initialEntries={["/about"]}>
-      <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="/about" element={<About />} />
-      </Routes>
+      <App />
     </MemoryRouter>
   );
-  expect(screen.getByText(/About/i)).toBeInTheDocument();
+
+  expect(screen.getByText(/ Explorador de Ethereum/i)).toBeInTheDocument();
+});
+
+test("Carga la página Explorer al navegar a /explorer", () => {
+  render(
+    <MemoryRouter initialEntries={["/explorer"]}>
+      <App />
+    </MemoryRouter>
+  );
+
+  expect(screen.getByText(/Explorador de Ethereum/i)).toBeInTheDocument();
 });
