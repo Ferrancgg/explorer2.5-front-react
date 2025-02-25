@@ -7,8 +7,11 @@ const useExplorerData = (selectedOption, formData) => {
 
   useEffect(() => {
     if (!selectedOption) return;
+    const API_URL = "https://explorer2-5-back-node-js-c-git-59ff53-ferrans-projects-6a9045a6.vercel.app";
+let url = `${API_URL}/explorer/${selectedOption}`;
 
-    let url = `http://localhost:4000/explorer/${selectedOption}`;
+
+    // let url = `http://localhost:4000/explorer/${selectedOption}`;
     if (selectedOption === "block" && formData) {
       const blockNumber = Object.values(formData)[0];
       if (!blockNumber) return;

@@ -1,86 +1,3 @@
-// import styled from "styled-components";
-// import Button from "../UI/Button";
-// import { useNavigate } from "react-router-dom";
-
-// const HeroContainer = styled.section`
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   justify-content: center;
-//   text-align: center;
-//   height: 55vh;
-//   background: ${({ theme }) => theme.colors.background};
-//   color: ${({ theme }) => theme.colors.text};
-//   padding: 20px;
-
-//   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-//     height: auto;
-//     padding: 60px 20px;
-//   }
-// `;
-
-// const HeroTitle = styled.h1`
-//   font-size: 3rem;
-//   font-weight: bold;
-//   color: ${({ theme }) => theme.colors.primary};
-
-//   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-//     font-size: 2.2rem;
-//   }
-// `;
-
-// const HeroSubtitle = styled.p`
-//   font-size: 1.2rem;
-//   max-width: 600px;
-//   margin: 10px 0 30px;
-//   color: ${({ theme }) => theme.colors.text};
-
-//   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-//     font-size: 1rem;
-//   }
-// `;
-
-// const ButtonGroup = styled.div`
-//   display: flex;
-//   gap: 15px;
-
-//   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-//     flex-direction: column;
-//     width: 100%;
-//     align-items: center;
-//   }
-// `;
-
-
-
-// const Hero = () => {
-
-//      const navigate=useNavigate() 
-//     const clickAbout=()=>{ 
-      
-//        navigate("/explorer")
-//     }
-//     const clickExplorer=()=>{
-//         navigate("/about")
-//     }
-    
-//   return (
-//     <HeroContainer>
-//       <HeroTitle>Explora Ethereum en Tiempo Real</HeroTitle>
-//       <HeroSubtitle>
-//         Consulta transacciones, bloques y direcciones con datos detallados y análisis en vivo.
-//       </HeroSubtitle>
-//       <ButtonGroup>
-//         <Button onClick={clickAbout}>El proyecto</Button>
-//         <Button style={{ background: "#FFD700", color: "#121826" }} onClick={clickExplorer}>Consultar ETH</Button>
-//       </ButtonGroup>
-//     </HeroContainer>
-//   );
-// };
-
-// export default Hero;
-
-
 import styled from "styled-components";
 import Button from "../UI/Button";
 import { useNavigate } from "react-router-dom";
@@ -164,11 +81,15 @@ const Hero = () => {
     <HeroContainer>
       <HeroTitle>Explora Ethereum en Tiempo Real</HeroTitle>
       <HeroSubtitle>
-        Consulta transacciones, bloques y direcciones con datos detallados y análisis en vivo.
+        Consulta transacciones, bloques y direcciones con datos detallados y
+        análisis en vivo.
       </HeroSubtitle>
       <ButtonGroup>
         <Button onClick={clickAbout}>El proyecto</Button>
-        <Button style={{ background: "#FFD700", color: "#121826" }} onClick={clickExplorer}>
+        <Button
+          style={{ background: "#FFD700", color: "#121826" }}
+          onClick={clickExplorer}
+        >
           Consultar ETH
         </Button>
       </ButtonGroup>
